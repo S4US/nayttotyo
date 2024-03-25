@@ -1,0 +1,24 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#laatikot {
+    border-spacing: 0;
+}
+
+td {
+    height: 50px; 
+    width: 50px;
+}
+
+#laatikot td {
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.nappula {
+    padding: 17px;
+}
