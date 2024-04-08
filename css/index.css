@@ -23,6 +23,19 @@ body {
     z-index: 999;
 }
 
+.nav-link {
+    padding: 4px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: black;
+    transition: 1;
+}
+
 .nav,
 .nav .nav-links {
     display: flex;
