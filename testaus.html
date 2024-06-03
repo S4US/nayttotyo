@@ -10,12 +10,25 @@
     <link rel="stylesheet" href="css/testaus.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #main-content {
+            text-align: center;
+        }
+
+        .overlay-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="nav">
         <i class="uil uil-bars navOpenBtn"></i>
-        <a href="#" class="logo">Kotkantien maalaus ja tapetointi</a>
+        <a href="index.html" class="logo">Kotkantien maalaus ja tapetointi</a>
 
         <ul class="nav-links">
             <i class="uil uil-times navCloseBtn"></i>
@@ -33,12 +46,28 @@
         </div>
     </nav>
 
-    <div id="main-content" style="align-content: center;text-align: center;">
+    <div id="main-content">
         <h1>Värien testaus</h1>
+        <button id="sohva-nappi" style="margin-bottom: 10px;">Näytä sohva</button>
+        <div style="display: inline-block; margin-left: 10px;">
+            <input type="checkbox" id="lock" name="lock" checked />
+            <label for="lock">Lukitse sohva</label>
+        </div>
+
+        <img id="sohva" src="svg/sohva1.svg" alt="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 340px; height: auto; z-index: 1;">
+
 
         <div class="main-content">
             <table id="laatikot">
                 <tr>
+                    <th>
+                        <svg id="left" width="100px" height="auto" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+                            <path
+                                d="M7.68473 7.33186C8.07526 6.94134 8.07526 6.30817 7.68473 5.91765C7.29421 5.52712 6.66105 5.52712 6.27052 5.91765L1.60492 10.5832C0.823873 11.3643 0.823872 12.6306 1.60492 13.4117L6.27336 18.0801C6.66388 18.4706 7.29705 18.4706 7.68757 18.0801C8.0781 17.6896 8.0781 17.0564 7.68757 16.6659L4.02154 12.9998L22 12.9998C22.5523 12.9998 23 12.5521 23 11.9998C23 11.4476 22.5523 10.9998 22 10.9998L4.01675 10.9998L7.68473 7.33186Z"
+                                fill="#0F0F0F" />
+                        </svg>
+                    </th>
                     <th>
                         <div id="box1"
                             style="width: 300px;height: 300px;border-bottom: 1px solid black;border-top: 1px solid black;border-left: 1px solid black;">
@@ -49,70 +78,111 @@
                             style="width: 300px;height: 300px;border-bottom: 1px solid black;border-top: 1px solid black;border-right: 1px solid black;">
                         </div>
                     </th>
+                    <th>
+                        <svg id="right" width="100px" height="auto" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+                            <path
+                                d="M16.3153 16.6681C15.9247 17.0587 15.9247 17.6918 16.3153 18.0824C16.7058 18.4729 17.339 18.4729 17.7295 18.0824L22.3951 13.4168C23.1761 12.6357 23.1761 11.3694 22.3951 10.5883L17.7266 5.9199C17.3361 5.52938 16.703 5.52938 16.3124 5.91991C15.9219 6.31043 15.9219 6.9436 16.3124 7.33412L19.9785 11.0002L2 11.0002C1.44772 11.0002 1 11.4479 1 12.0002C1 12.5524 1.44772 13.0002 2 13.0002L19.9832 13.0002L16.3153 16.6681Z"
+                                fill="#0F0F0F" />
+                        </svg>
+                    </th>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <button id="box1-button" style="width: 297px;">Box 1</button>
-                        <button id="box2-button" style="width: 297px;">Box 2</button>
+                    <td colspan="4">
+                        <button id="box1-button" style="width: 297px;">Vasen</button>
+                        <button id="box2-button" style="width: 297px;">Oikea</button>
                     </td>
                 </tr>
             </table>
             <table>
                 <tr>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #DD4132;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #DD4132;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #9E1030;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #9E1030;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #FE840E;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #FE840E;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #FF6F61;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #FF6F61;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #C62168;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #C62168;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #8D9440;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #8D9440;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #FFD662;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #FFD662;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #00539C;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #00539C;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #755139;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #755139;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #D69C2F;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #D69C2F;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #616247;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #616247;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #E8B5CE;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #E8B5CE;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #D2C29D;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #D2C29D;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #343148;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #343148;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #F0EAD6;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #F0EAD6;">
+                        </div>
                     </th>
                     <th>
-                        <div class="nappula" style="width: 25px; height: 25px; border: 1px solid black; background-color: #615550;"></div>
+                        <div class="nappula"
+                            style="width: 25px; height: 25px; border: 1px solid black; background-color: #615550;">
+                        </div>
                     </th>
-                    
-                </tr>                           
+                </tr>
             </table>
         </div>
     </div>
 
+    <script src="js/plain-draggable.min.js"></script>
+    <script src="js/draggable-svg.js"></script>
     <script src="js/index.js" defer></script>
     <script src="js/testaus.js" defer></script>
 </body>
