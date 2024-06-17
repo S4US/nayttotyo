@@ -1,94 +1,89 @@
-/* Resetting default browser styles */
-  p {
-    font-size: 12px;
-  }
+/* Setting fonts and font sizes for text and headers */
+* {
+  font-family: Roboto;
+}
 
-  h1 {
-    font-size: 24px;
-  }
+p {
+  font-size: 12px;
+}
 
-  h2,h3 {
-    font-size: 14px;
-  }
-  
-  #main-content {
-    margin-top: 200px;
-    padding: 20px;
-  }
-  
+h1 {
+  font-size: 24px;
+}
+
+h2,h3 {
+  font-size: 14px;
+}
+
+/* Main div */
+#main-content {
+  margin-top: 60px;
+  padding: 20px;
+}
+
+/* Class for main div */
+/* Basic css styling for the div */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header style */
+.content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #444;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Unordered list style */ 
+.service ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Styling for list item (li) and unordered list (ul)*/
+.service ul li {
+  margin-bottom: 20px;
+}
+
+.service ul li p {
+  margin-top: 5px;
+  color: #777;
+  line-height: 1.8;
+}
+
+.service ul li::before {
+  color: #ff6347;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+/* ----- */
+
+/* This makes the site responsive */
+@media (max-width: 768px) {
   .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
   }
-  
-  .content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #444;
-    text-align: center;
-  }
-  
+
   .services-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
   }
-  
-  .service {
-    flex: 1;
-    background: #f9f9f9;
+
+  #main-content {
+    margin-top: 400px;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   }
-  
-  .service h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #555;
-  }
-  
-  .service h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #666;
-  }
-  
-  .service ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .service ul li {
-    margin-bottom: 20px;
-  }
-  
-  .service ul li p {
-    margin-top: 5px;
-    color: #777;
-    line-height: 1.8;
-  }
-  
-  .service ul li::before {
-    color: #ff6347;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-  
-  /* Media Queries for responsiveness */
-  @media (max-width: 768px) {
-    .content {
-      padding: 10px;
-    }
-  
-    .services-container {
-      flex-direction: column;
-    }
-  }
-  
+}

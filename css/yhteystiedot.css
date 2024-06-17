@@ -1,0 +1,14 @@
+/* This makes #main-content wider for mobile devices */
+@media (max-width: 768px) {
+    .content {
+      padding: 10px;
+    }
+  
+    .services-container {
+      flex-direction: column;
+    }
+  
+    #main-content {
+      width: 100%;
+    }
+  }
