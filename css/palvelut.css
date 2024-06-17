@@ -1,8 +1,18 @@
 /* Resetting default browser styles */
+  p {
+    font-size: 12px;
+  }
 
+  h1 {
+    font-size: 24px;
+  }
+
+  h2,h3 {
+    font-size: 14px;
+  }
   
   #main-content {
-    margin-top: 400px;
+    margin-top: 200px;
     padding: 20px;
   }
   
